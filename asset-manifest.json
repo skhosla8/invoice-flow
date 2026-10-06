@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/invoice-flow/static/css/main.7a9aa3f8.css",
-    "main.js": "/invoice-flow/static/js/main.dbef9f59.js",
+    "main.css": "/invoice-flow/static/css/main.a685dad3.css",
+    "main.js": "/invoice-flow/static/js/main.b82f4b9c.js",
     "static/media/icon-sun.svg": "/invoice-flow/static/media/icon-sun.f3da52d13a35ad8bc751df2e85093f98.svg",
     "index.html": "/invoice-flow/index.html",
     "static/media/icon-delete-red.svg": "/invoice-flow/static/media/icon-delete-red.3da2bdb4a5624c7b8a46420c2d4c854b.svg",
@@ -12,11 +12,11 @@
     "static/media/icon-arrow-left.svg": "/invoice-flow/static/media/icon-arrow-left.e92c01343f0ff05d50740eade618a140.svg",
     "static/media/icon-arrow-down.svg": "/invoice-flow/static/media/icon-arrow-down.a6ed7bfffecda935c666fda2939c385c.svg",
     "static/media/icon-arrow-right.svg": "/invoice-flow/static/media/icon-arrow-right.9e19be64001504a17c146eb378c556a2.svg",
-    "main.7a9aa3f8.css.map": "/invoice-flow/static/css/main.7a9aa3f8.css.map",
-    "main.dbef9f59.js.map": "/invoice-flow/static/js/main.dbef9f59.js.map"
+    "main.a685dad3.css.map": "/invoice-flow/static/css/main.a685dad3.css.map",
+    "main.b82f4b9c.js.map": "/invoice-flow/static/js/main.b82f4b9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a9aa3f8.css",
-    "static/js/main.dbef9f59.js"
+    "static/css/main.a685dad3.css",
+    "static/js/main.b82f4b9c.js"
   ]
 }
