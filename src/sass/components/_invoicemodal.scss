@@ -1,3 +1,4 @@
+@use '../abstracts/invoice-layout' as layout;
 @use '../abstracts/variables' as *;
 
 .invoice-modal {
@@ -347,3 +348,5 @@
         background-color: $purple-dark;
     }
 }
+
+@include layout.invoice-layout('invoice-modal');

@@ -34,8 +34,8 @@ function ViewInvoice({ invoiceId, setInvoiceId }) {
     const renderedInvoiceItems = currentInvoice && currentInvoice.items.map((item, i) => (
         <tr key={i} className="view-invoice__invoice__container4__item">
             <td>{item.name}</td>
-            <td>{item.quantity}</td>
-            <td>&#163;{item.price ? item.price.toFixed(2) : item.price}</td>
+            <td data-label="Qty.">{item.quantity}</td>
+            <td data-label="Price">&#163;{item.price ? item.price.toFixed(2) : item.price}</td>
             <td>&#163;{item.total ? item.total.toFixed(2) : item.total}</td>
         </tr>
     ));

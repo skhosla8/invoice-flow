@@ -1,3 +1,4 @@
+@use '../abstracts/invoice-layout' as layout;
 @use '../abstracts/variables' as *;
 
 .edit-invoice {
@@ -265,3 +266,5 @@
     cursor: default;
     background-color: $purple-dark;
 }
+
+@include layout.invoice-layout('edit-invoice');

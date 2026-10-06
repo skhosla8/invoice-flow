@@ -487,20 +487,34 @@ function InvoiceModal({ invoiceId, currentInvoice, isOpenNewInvoice, setIsOpenNe
 
     const renderedItems = isOpenNewInvoice ? items && items.map((item, i) => (
         <div key={i} id={`invoice-modal-item-${i}`} className='invoice-modal__items-container__item'>
-            <input className='item-name invoice-modal__field__input' type='text' onChange={handleItems} />
-            <input className='item-qty invoice-modal__field__input' type='text' onChange={handleItems} />
-            <input className='item-price invoice-modal__field__input' type='text' onChange={handleItems} />
-            <input className='item-total invoice-modal__field__input' type='text' readOnly />
-            <img id={`trash-icon-${i}`} className='trash-icon' src={deleteIcon} alt='trash-icon' onClick={() => removeInvoiceItem(`invoice-modal-item-${i}`)} onMouseEnter={() => getRedTrashIcon(`trash-icon-${i}`)} onMouseLeave={() => getOriginalTrashIcon(`trash-icon-${i}`)} />
+            <input aria-label='Item Name' className='item-name invoice-modal__field__input' type='text' onChange={handleItems} />
+            <input aria-label='Quantity' className='item-qty invoice-modal__field__input' type='text' onChange={handleItems} />
+            <input aria-label='Price' className='item-price invoice-modal__field__input' type='text' onChange={handleItems} />
+            <input aria-label='Total' className='item-total invoice-modal__field__input' type='text' readOnly />
+            <button type='button' className='item-remove' aria-label='Remove item' onClick={() => removeInvoiceItem(`invoice-modal-item-${i}`)} onMouseEnter={() => getRedTrashIcon(`trash-icon-${i}`)} onMouseLeave={() => getOriginalTrashIcon(`trash-icon-${i}`)}><img id={`trash-icon-${i}`} className='trash-icon' src={deleteIcon} alt='' /></button>
+            <span className='item-label item-label-name' aria-hidden='true'>Item Name</span>
+            <span className='item-label item-label-qty' aria-hidden='true'>Qty.</span>
+            <span className='item-label item-label-price' aria-hidden='true'>Price</span>
+            <span className='item-label item-label-total' aria-hidden='true'>Total</span>
         </div>)) :
         formData && formData.items.map((item, i) => (
             <div key={i} id={`invoice-modal-item-${i}`} className='invoice-modal__items-container__item'>
-                <input className='item-name invoice-modal__field__input' type='text' defaultValue={item.name} onChange={handleItems} />
-                <input className='item-qty invoice-modal__field__input' type='text' defaultValue={item.quantity} onChange={handleItems} />
-                <input className='item-price invoice-modal__field__input' type='text' defaultValue={item.price} onChange={handleItems} />
-                <input className='item-total invoice-modal__field__input' type='text' defaultValue={item.total} readOnly />
+                <input aria-label='Item Name' className='item-name invoice-modal__field__input' type='text' defaultValue={item.name} onChange={handleItems} />
+                <input aria-label='Quantity' className='item-qty invoice-modal__field__input' type='text' defaultValue={item.quantity} onChange={handleItems} />
+                <input aria-label='Price' className='item-price invoice-modal__field__input' type='text' defaultValue={item.price} onChange={handleItems} />
+                <input aria-label='Total' className='item-total invoice-modal__field__input' type='text' defaultValue={item.total} readOnly />
+                <span className='item-label item-label-name' aria-hidden='true'>Item Name</span>
+                <span className='item-label item-label-qty' aria-hidden='true'>Qty.</span>
+                <span className='item-label item-label-price' aria-hidden='true'>Price</span>
+                <span className='item-label item-label-total' aria-hidden='true'>Total</span>
             </div>
         ));
+
+    useEffect(() => {
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => { document.body.style.overflow = previousOverflow; };
+    }, []);
 
     useEffect(() => {
         setItemsArr(formDataItems);
@@ -569,8 +583,8 @@ function InvoiceModal({ invoiceId, currentInvoice, isOpenNewInvoice, setIsOpenNe
     return (
         <>
             <div className="overlay"></div>
-            <div className="invoice-modal">
-                <h1>{isOpenNewInvoice ? 'New Invoice' : <div>Edit<span>#</span>{invoiceId}</div>}</h1>
+            <div className="invoice-modal" role="dialog" aria-modal="true" aria-labelledby="invoice-modal-title">
+                <h1 id="invoice-modal-title">{isOpenNewInvoice ? 'New Invoice' : <div>Edit<span>#</span>{invoiceId}</div>}</h1>
 
                 <h2>Bill From</h2>
 

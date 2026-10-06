@@ -1,4 +1,31 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-width: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: #141625;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+button, input, select, textarea, img, svg {
+  max-width: 100%;
+}
+
+button, [role="button"] {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid #9277ff;
+  outline-offset: 3px;
 }

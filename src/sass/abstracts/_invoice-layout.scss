@@ -1,0 +1,125 @@
+@mixin invoice-layout($name) {
+    .#{$name} {
+        position: fixed;
+        top: 0;
+        left: 75px;
+        width: min(430px, calc(100% - 75px));
+        height: 100vh;
+        height: 100dvh;
+        padding: 0 clamp(16px, 4vw, 40px) 24px;
+        z-index: 101;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        overflow-wrap: anywhere;
+        color: #fff;
+
+        input, select {
+            min-width: 0;
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 8px;
+        }
+
+        button { min-height: 44px; font-size: 0.75rem; }
+        h1 { padding-top: 32px; }
+    }
+
+    .#{$name}__field { min-width: 0; }
+
+    .#{$name}__location, .#{$name}__date-terms {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+
+        > div {
+            min-width: 0;
+            &:nth-of-type(2) { margin: 0; }
+            input, select, #terms { width: 100%; margin: 0; }
+        }
+    }
+
+    .#{$name}__date-terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .#{$name}__list-items, .#{$name}__items-container__item {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 1fr) 44px;
+        gap: 4px;
+        align-items: center;
+        > span { padding: 0; min-width: 0; }
+    }
+
+    .#{$name}__list-items span:nth-of-type(n) { padding: 0; }
+
+    .#{$name}__items-container {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .#{$name} {
+        .item-name, .item-qty, .item-price, .item-total {
+            width: 100%;
+            margin: 0;
+            padding: 10px 6px;
+        }
+        .item-label { display: none; }
+        .item-remove { background: transparent; border-radius: 4px; width: 44px; padding: 0; }
+        .trash-icon { width: 12px; height: 14px; margin: 0; }
+    }
+
+    .#{$name}__options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: space-between;
+        margin: 24px 0 0;
+
+        > div { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
+        button { padding: 10px 12px; }
+        #discard { position: static; }
+        #save-draft { margin-right: 0; }
+    }
+
+    .#{$name}__errors { margin: 20px 0 0; }
+
+    @media (max-width: 767px) {
+        .#{$name} {
+            left: 0;
+            width: min(430px, 100%);
+            padding-bottom: max(24px, env(safe-area-inset-bottom));
+            input, select, #terms { font-size: 16px; }
+            input::placeholder { font-size: 0.8rem; }
+            input[type="date"]::-webkit-datetime-edit { font-size: 16px; }
+            label { font-size: 0.8rem; }
+        }
+    }
+
+    @media (max-width: 479px) {
+        .#{$name} { border-radius: 0; }
+        .#{$name}__location {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 14px;
+            > div:last-child { grid-column: 1 / -1; }
+        }
+        .#{$name}__date-terms { grid-template-columns: minmax(0, 1fr); gap: 0; }
+        .#{$name}__list-items { display: none; }
+        .#{$name}__items-container__item {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) 44px;
+            gap: 8px;
+            margin: 20px 0;
+            .item-name { grid-column: 1 / 4; grid-row: 2; }
+            .item-qty { grid-column: 1; grid-row: 4; }
+            .item-price { grid-column: 2; grid-row: 4; }
+            .item-total { grid-column: 3; grid-row: 4; }
+            .item-remove { grid-column: 4; grid-row: 2; }
+            .item-label { display: block; color: #DFE3FA; font-size: 0.8rem; }
+            .item-label-name { grid-column: 1 / -1; grid-row: 1; }
+            .item-label-qty { grid-column: 1; grid-row: 3; }
+            .item-label-price { grid-column: 2; grid-row: 3; }
+            .item-label-total { grid-column: 3; grid-row: 3; }
+        }
+        .#{$name}__options {
+            > div { flex: 1 1 100%; }
+            button { flex: 1; }
+        }
+    }
+}

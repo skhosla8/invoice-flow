@@ -92,10 +92,10 @@ function Main({ invoiceId, setInvoiceId }) {
                 </div>
 
                 <div className="main__header__container2">
-                    <div onClick={toggleStatusDropdown}>
+                    <button className="status-filter" aria-expanded={showDropdown} aria-controls="dropdown-status" onClick={toggleStatusDropdown}>
                         Filter by status
                         <img src={arrowDownIcon} alt="arrow-down" />
-                    </div>
+                    </button>
 
                     <button onClick={openNewInvoice}>
                         <div>

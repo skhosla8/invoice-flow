@@ -5,40 +5,31 @@
 @use './components/newinvoice';
 @use './components/viewinvoice';
 @use './components/deletemodal';
-@use './components//editinvoice';
+@use './components/editinvoice';
 @use './components/invoicemodal';
 
 .app {
     display: flex;
-    flex-direction: row;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
+    min-height: 100dvh;
     background-color: $charcoal-light;
     font-family: $font-family;
 }
 
-.visible {
-    visibility: visible;
-}
-
-.hide {
-    display: none;
-}
-
-.display {
-    display: flex;
-}
+.visible { visibility: visible; }
+.hide { display: none; }
+.display { display: flex; }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
+    position: fixed;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
 }
 
-.error {
-    border: 1px solid $red-dark;
+.error { border: 1px solid $red-dark; }
+
+@media (max-width: 767px) {
+    .app { flex-direction: column; }
 }

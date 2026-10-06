@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/invoice-flow/static/css/main.a685dad3.css",
+    "main.js": "/invoice-flow/static/js/main.b82f4b9c.js",
+    "static/media/icon-sun.svg": "/invoice-flow/static/media/icon-sun.f3da52d13a35ad8bc751df2e85093f98.svg",
+    "index.html": "/invoice-flow/index.html",
+    "static/media/icon-delete-red.svg": "/invoice-flow/static/media/icon-delete-red.3da2bdb4a5624c7b8a46420c2d4c854b.svg",
+    "static/media/icon-delete.svg": "/invoice-flow/static/media/icon-delete.55a4f6bdb58d753dfd4d9a42f42e8e53.svg",
+    "static/media/logo.svg": "/invoice-flow/static/media/logo.e8c9e71e5f292af8e66b49e99439f7b7.svg",
+    "static/media/icon-plus-light.svg": "/invoice-flow/static/media/icon-plus-light.d7c04c88f776163de6ff92c63061881a.svg",
+    "static/media/icon-plus.svg": "/invoice-flow/static/media/icon-plus.278c048a38de266d0e5bdbb8bcaaf395.svg",
+    "static/media/icon-arrow-left.svg": "/invoice-flow/static/media/icon-arrow-left.e92c01343f0ff05d50740eade618a140.svg",
+    "static/media/icon-arrow-down.svg": "/invoice-flow/static/media/icon-arrow-down.a6ed7bfffecda935c666fda2939c385c.svg",
+    "static/media/icon-arrow-right.svg": "/invoice-flow/static/media/icon-arrow-right.9e19be64001504a17c146eb378c556a2.svg",
+    "main.a685dad3.css.map": "/invoice-flow/static/css/main.a685dad3.css.map",
+    "main.b82f4b9c.js.map": "/invoice-flow/static/js/main.b82f4b9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a685dad3.css",
+    "static/js/main.b82f4b9c.js"
+  ]
+}
